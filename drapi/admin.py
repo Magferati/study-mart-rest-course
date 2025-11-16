@@ -4,4 +4,4 @@ from .models import Aiquest
 # Register your models here.
 @admin.register(Aiquest)
 class AiquestAdmin(admin.ModelAdmin):
-    list_display = ['id','techer_name','course_name','course_time','seat']
+    list_display = ['id','teacher_name','course_name','course_time','seat']

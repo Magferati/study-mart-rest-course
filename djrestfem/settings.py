@@ -40,8 +40,15 @@ INSTALLED_APPS = [
     'rest_framework',
     'drapi',
     'rest_framework_swagger',
+    "debug_toolbar",
 
 ] 
+#ডিবাগ টুলবারটি শুধুমাত্র তখনই প্রদর্শিত হবে যদি আপনার আইপি ঠিকানা জ্যাঙ্গোর INTERNAL_IPSসেটিংসে তালিকাভুক্ত থাকে। এর মানে হল স্থানীয় ডেভেলপমেন্টের জন্য, আপনাকে অবশ্যই যোগ করতে "127.0.0.1"হবে INTERNAL_IPS। যদি আপনার সেটিংস মডিউলে ইতিমধ্যেই এই সেটিংটি বিদ্যমান না থাকে তবে আপনাকে এই সেটিংটি তৈরি করতে হবে:ami amar problem gula dethate chai na tai ami ekta enternal ip set koresi.
+INTERNAL_IPS = [
+
+    "127.0.0.1",
+    
+]
 
 REST_FRAMEWORK = {
    
@@ -58,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'djrestfem.urls'
